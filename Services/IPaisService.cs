@@ -9,6 +9,8 @@ namespace DapperConsole.Services
 {
     public interface IPaisService
     {
-        IEnumerable<PaisDto> Paises();
+        IEnumerable<PaisDto> Estados();
+
+        IEnumerable<PaisDto> Estados(string pais);
     }
 }

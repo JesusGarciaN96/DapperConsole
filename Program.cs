@@ -8,10 +8,12 @@ namespace DapperConsole
         {
             var PaisService = new PaisService();
 
-            foreach (var item in PaisService.Paises())
+            foreach (var item in PaisService.Estados("Ch"))
             {
                 Console.WriteLine($"{item.Id}, {item.Estado}, {item.Pais}");
             }
+
+            Console.ReadKey();
         }
     }
 }
