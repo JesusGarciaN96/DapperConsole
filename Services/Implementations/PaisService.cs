@@ -1,6 +1,5 @@
 ﻿using Dapper;
 using DapperConsole.Models;
-using DapperConsole.Settings;
 using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 
