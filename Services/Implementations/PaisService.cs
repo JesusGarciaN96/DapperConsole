@@ -1,18 +1,18 @@
 ﻿using Dapper;
 using DapperConsole.Models;
 using DapperConsole.Settings;
+using Microsoft.Extensions.Configuration;
 using System.Data.SqlClient;
 
 namespace DapperConsole.Services.Implementations
 {
     public class PaisService : IPaisService
     {
-        private readonly string _connection = Connection.connectionString;
         private readonly SqlConnection _connectionUniversidad;
 
-        public PaisService()
+        public PaisService(IConfiguration configuration)
         {
-            _connectionUniversidad = new SqlConnection(_connection);
+            _connectionUniversidad = new SqlConnection(configuration.GetConnectionString("Default_Connection"));
         }
 
         public IEnumerable<PaisDto> Estados()
